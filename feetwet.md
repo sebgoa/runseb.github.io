@@ -12,6 +12,8 @@ Start an instance via the UI
 5. Start an instance
 6. ssh to the instance
 
+![Key Pairs](./images/keypairs.png)
+
 Find your API Keys and inspect the API calls
 --------------------------------------------
 
