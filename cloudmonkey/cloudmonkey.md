@@ -17,8 +17,12 @@ The full documentation for cloudmonkey is on the [wiki](https://cwiki.apache.org
  
 Explore the ACS native API with CloudMonkey and tab tab....
 
+Try to create a `sshkeypair` with `create sshkeypair`, a `securitygroup` with `create securitygroup` and add some rules to it.
+
+
 Tabular Output
---------------
+--------------------
+
 The number of key/value pairs returned by the api calls can be large
 resulting in a very long output. To enable easier viewing of the output,
 a tabular formatting can be setup. You may enable tabular listing and
@@ -40,7 +44,8 @@ To enable it, use the *set* function and create filters like so:
     +--------+--------------------------------------+
         
 Starting a Virtual Machine instance with CloudMonkey
-----------------------------------------------------
+------------------------------------------------------------------------
+
 To start a virtual machine instance we will use the *deployvirtualmachine* call.
 
     cloudmonkey>deploy virtualmachine -h
@@ -131,8 +136,6 @@ The instance would be stopped with:
     +--------------------------------------+--------------------------------------+---------+
         
 The *ids* that you will use will differ from this example. Make sure you use the ones that corresponds to your CloudStack cloud.
-
-Try to create a `sshkeypair` with `create sshkeypair`, a `securitygroup` with `create securitygroup` and add some rules to it.
 
 With CloudMonkey all CloudStack APIs are available.
 
