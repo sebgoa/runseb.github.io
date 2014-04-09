@@ -8,3 +8,5 @@ Check the CloudStack driver [documentation](https://libcloud.readthedocs.org/en/
 For a presentation on `libcloud` check my [slides](http://www.slideshare.net/sebastiengoasguen/apache-libcloud) from Apachecon NA 2014.
 
 In this section we will install `libcloud` and connect to [exoscale](http://exoscale.ch) using the CloudStack driver.
+
+![Apache libcloud](./images/libcloud.png)

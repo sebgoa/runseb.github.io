@@ -7,6 +7,8 @@ a CloudStack cloud, mapping the EC2 calls to the appropriate CloudStack API.
 
 In this section we are going to deploy `ec2stack` and test it using the [AWS CLI](http://aws.amazon.com/cli/)
 
+![AWS EC2](./images/ec2.jpg)
+
 Getting ready
 -------------
 
