@@ -5,4 +5,4 @@ Vagrant boxes
 
 In this next exercise we are going to install vagrant on our local machine and use Exoscale vagrant boxes to provision VM in the Cloud using configuration setup in Vagrant. For future reading check this [post](http://sebgoa.blogspot.co.uk/2013/12/veewee-vagrant-and-cloudstack.html)
 
-![Vagrant](./images/vagrant.png)
+![Vagrant](../images/vagrant.png)

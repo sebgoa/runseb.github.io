@@ -10,7 +10,7 @@ This is the summary of my book.
     * [Display](cloudmonkey/display.md)
     * [Run](cloudmonkey/run.md)
 * [Apache Libcloud](libcloud/README.md)
-    * [Installation](libcloud/installation.md
+    * [Installation](libcloud/installation.md)
     * [Usage overview](libcloud/usage.md)
     * [Interactive Shell](libcloud/shell.md)
     * [Create and Deploy nodes](libcloud/run.md)
