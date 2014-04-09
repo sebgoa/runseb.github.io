@@ -3,7 +3,11 @@
 This is the summary of my book.
 
 * [Introduction](README.md)
-* [Getting your feet wet](feetwet.md)
+* [Getting your feet wet](feetwet/README.md)
+    * [Sign Up](feetwet/signup.md)
+    * [Getting Started](feetwet/feetwet.md)
+    * [API Keys](feetwet/apikeys.md)
+    * [User Data](feetwet/userdata.md)
 * [CloudMonkey](cloudmonkey/README.md)
     * [Installation](cloudmonkey/install.md)
     * [Configuration](cloudmonkey/configure.md)
