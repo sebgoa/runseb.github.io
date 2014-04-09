@@ -3,7 +3,6 @@ Exobook
 
 A book of exercises to learn CloudStack using [exoscale](http://exoscale.ch)
 
-![Exoscale logo](./images/exoscale.jpg)
 ![Apache CloudStack logo](./images/acslogo.png)
 
 These instructions aim to give an introduction to Apache CloudStack. You will be accessing a production cloud based on CloudStack, getting a feel for it through the UI, then using a few tools to provision and configure machines in the cloud. For a more complete guide see this [Little Book](https://github.com/runseb/cloudstack-books/blob/master/en/clients.markdown)

@@ -1,4 +1,4 @@
-Getting your feet wet with [exoscale.ch](http://exoscale.ch)
+Getting your feet wet with [exoscale](http://exoscale.ch)
 ============================================================
 
 ![Exoscale Logo](../images/exoscale.jpg)

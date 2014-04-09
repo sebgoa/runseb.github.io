@@ -1,7 +1,7 @@
 Exoscale Sign-up
 ----------------
 
-Go to `http://exoscale.ch` and signup
+Go to [exoscale](http://exoscale.ch) and signup
 
 ![Sign up](../images/signup.png)
 
