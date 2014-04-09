@@ -1,4 +1,4 @@
-dd provisioning steps
+Provisioning steps
 ----------------------
 
 Once you have successfully started a machine with vagrant, you are ready to specify a provisioning script. Create a `boostrap.sh` bash script in your working directory and make it do whatever you want.
