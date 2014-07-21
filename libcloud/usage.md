@@ -19,9 +19,11 @@ public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the hos
 
     >>> apikey='plgWJfZK4gyS3mlZLYq_u38zCm0bewzGUdP66mg'
     >>> secretkey='VDaACYb0LV9eNjeq1EhwJaw7FF3akA3KBQ'
-    >>> host='http://localhost:8080'
-    >>> path='/client/api'
-    >>> conn=Driver(key=apikey,secret=secretkey,secure=False,host='localhost',port='8080',path=path)
+    >>> host='http://api.exoscale.ch'
+    >>> port='443'
+    >>> secure=True
+    >>> path='/compute'
+    >>> conn=Driver(key=apikey,secret=secretkey,secure=secure,host=host,port=port,path=path)
 
 With the connection object in hand, you now use the libcloud base api to
 list such things as the templates (i.e images), the service offerings
