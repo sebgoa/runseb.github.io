@@ -20,6 +20,8 @@ I wrote this book on my copious spare time while my wife was sleeping. If you wo
 
 And don't hestitate to donate :)
 
+Bitcoin address: 1DkeZs5HJTcsRyjZviZ9NjiecfqZsDqnA2
+
 Feet Wet with [exoscale](http://exoscale.ch)
 ============================================
 
