@@ -131,17 +131,16 @@ Of course you will need `pip`, in case you have not installed it already, get it
 
     $apt-get -y install python-pip
 
-To test that your installation was successfull just type `cloudmonkey` at the promt and press enter.
+If you are familiar with `virtualenv`, just create one and install `cloudmonkey` in it.
+
+To test that your installation was successful just type `cloudmonkey` at the prompt and press enter.
 
 Configuration
 -------------
 
 At the `cloudmonkey` prompt use the `set` command to point to `exoscale`:
 
-    >set port 443
-    >set protocol https
-    >set path /compute
-    >set host api.exoscale.ch
+    >set url https://api.exoscale.ch/compute
     >set apikey <yourapikey>
     >set secretkey <secretkey>
 
@@ -310,13 +309,13 @@ driver.
 
 Then, using your keys and endpoint, create a connection object. Note
 that this is a local test and thus not secured. If you use a CloudStack
-public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='http://api.exoscale.ch` and `path=/compute`
+public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='http://api.exoscale.ch` and `path=/compute` like so:
 
     >>> apikey='plgWJfZK4gyS3mlZLYq_u38zCm0bewzGUdP66mg'
     >>> secretkey='VDaACYb0LV9eNjeq1EhwJaw7FF3akA3KBQ'
-    >>> host='http://localhost:8080'
-    >>> path='/client/api'
-    >>> conn=Driver(key=apikey,secret=secretkey,secure=False,host='localhost',port='8080',path=path)
+    >>> host='https://api.exoscale.ch'
+    >>> path='/compute'
+    >>> conn=Driver(key=apikey,secret=secretkey,secure=True,host=host,port='443',path=path)
 
 With the connection object in hand, you now use the libcloud base api to
 list such things as the templates (i.e images), the service offerings
@@ -391,7 +390,7 @@ To get you started quickly, save the following script in a .py file.
     shell = InteractiveShellEmbed(banner1="Hello from Libcloud Shell !!")
     shell()
 
-Set your API keys properly.
+Set your API keys properly as environment variables and install IPython.
 
 Start this shell by executing the script:
 
@@ -401,7 +400,6 @@ Start this shell by executing the script:
     In [1]: 
 
 At the prompt type `conn.list` and press the tab key to see the list of available `list` apis.
-
 
 You can now explore the libcloud API interactively.
 
