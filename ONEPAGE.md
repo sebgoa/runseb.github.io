@@ -113,6 +113,80 @@ Start an Ubuntu 12.04 instance and in the User-Data tab input:
 
 Now open your browser on port 80 of the IP of your instance and Voila !
 
+Docker
+======
+
+Starting a coreOS instance
+--------------------------
+
+[Docker](http://www.docker.com) has been taking the IT world by storm over the last 10 months. So let's start an instance where we can test docker.
+
+[CoreOS](http://coreos.com) is a new linux distribution that among other things comes with docker support out of the box. exoscale supports coreOS so we are going to start a coreOS instance.
+
+Head to the UI, select coreOS as your template and create the instance:
+
+![coreOS template](./images/coreos.png)
+
+Once the instance is running, ssh to it using the core user for instance:
+
+    ssh core@1.2.3.4
+
+You will then be logged in a coreOS instance which runs docker.
+
+    core@VM-d5410d4e-53a2-4bb5-a373-3566d95e0af8 ~ $ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    core@VM-d5410d4e-53a2-4bb5-a373-3566d95e0af8 ~ $ docker ps
+    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+    core@VM-d5410d4e-53a2-4bb5-a373-3566d95e0af8 ~ $
+
+To test docker, just pull an nginx container image from dockerhub and run it:
+
+    $ docker pull dockerfile/nginx
+    $ docker run -p 80:80 -d dockerfile/nginx
+
+Using cloud-config
+------------------
+
+In the previous section you got familiar with userdata. We can use userdata to configure a coreOS instance and start a container on boot.
+
+Since coreOS uses [systemd]() we are going to define a systemd unit within the userdata file using the cloud-config format.
+This unit will pull a docker image that contains elasticsearch, and then run the container and expose the correct port.
+
+Head back to the UI, start a coreOS instance and paste the following in the UserData tab:
+
+    #cloud-config
+
+    coreos:
+      units:
+        - name: docker.service
+          command: start
+        - name: es.service
+          command: start
+          content: |
+            [Unit]
+            After=docker.service
+            Requires=docker.service
+            Description=starts Elastic Search container
+        
+            [Service]
+            TimeoutStartSec=0
+            ExecStartPre=/usr/bin/docker pull dockerfile/elasticsearch
+            ExecStart=/usr/bin/docker run -d -p 9200:9200 -p 9300:9300 dockerfile/elasticsearch
+
+Like so:
+
+![es userdata](./images/es.png)
+
+Once the instance has started, you can ssh into it like we did previously. It will take a bit of time for the instance to download the elasticsearch container image, you can monitor it with:
+
+    $ watch docker images
+
+Once it's downloaded the container will start and you will be able to open your browser on http://<ip of instance>:9200 
+
+Well done, you are running a one node elasticsearch "cluster" via docker on coreOS on cloudstack.
+
+If you want to do more with docker, you might want to check out this other tutorial about [Kubernetes](https://github.com/runseb/kubernetes-exoscale) but you will need more credits :(
+
 CloudMonkey
 ===========
 
@@ -800,7 +874,4 @@ And terminate them:
     $aws ec2 terminate-instances --instance-ids=259851ae-281b-45cf-bf1c-df83e3a885e1 --endpoint=http://localhost:5000
 
 That's it, have fun and contribute more API mappings to `ec2stack`
-
-Docker
-======
 
