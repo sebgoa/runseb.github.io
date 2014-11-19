@@ -546,7 +546,7 @@ Initialize a `Vagrantfile` and start an instance
 
 Now you need to create a *Vagrantfile*. In the directory of you choice  for example `/tutorial` do:
 
-    vagrant init
+    vagrant init Linux-Ubuntu-13.10-64-bit-50-GB-Disk
 
 Then edit the `Vagrantfile` created to contain this:
 
