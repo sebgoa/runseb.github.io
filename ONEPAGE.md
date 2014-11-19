@@ -300,7 +300,7 @@ Note that we can use the linux pipe as well as standard linux commands
 within the interactive shell. Finally we would start an instance with
 the following call:
 
-    cloudmonkey>deploy virtualmachine templateid=20d4ebc3-8898-431c-939e-adbcf203acec zoneid=1128bd56-b4d9-4ac6-a7b9-c715b187ce11 serviceofferingid=71004023-bb72-4a97-b1e9-bc66dfce9470
+    cloudmonkey>deploy virtualmachine templateid=20d4ebc3-8898-431c-939e-adbcf203acec zoneid=1128bd56-b4d9-4ac6-a7b9-c715b187ce11 serviceofferingid=71004023-bb72-4a97-b1e9-bc66dfce9470 keypair=exoscale
     id = 5566c27c-e31c-438e-9d97-c5d5904453dc
     jobid = 334fbc33-c720-46ba-a710-182af31e76df
 
