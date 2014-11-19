@@ -10,15 +10,16 @@ These instructions aim to give an introduction to Apache CloudStack. You will be
 What we will do in this tutorial is:
 
 0. Getting your feet wet with [exoscale](http://exoscale.ch)
-1. Using [CloudMonkey](https://pypi.python.org/pypi/cloudmonkey/)
-2. Discovering Apache [libcloud](http://libcloud.apache.org)
-3. Using [Vagrant](http://vagrantup.com) boxes and deploying instances in the cloud
-4. Using [Ansible](http://ansibleworks.com) configuration management tool
-5. Using the AWS [CLI](http://aws.amazon.com/cli/) with the CloudStack EC2 interface [`ec2stack`](https://github.com/BroganD1993/ec2stack)
+1. Playing with [Docker](http://www.docker.com)
+2. Using [CloudMonkey](https://pypi.python.org/pypi/cloudmonkey/)
+3. Discovering Apache [libcloud](http://libcloud.apache.org)
+4. Using [Vagrant](http://vagrantup.com) boxes and deploying instances in the cloud
+5. Using [Ansible](http://ansibleworks.com) configuration management tool
+6. Using the AWS [CLI](http://aws.amazon.com/cli/) with the CloudStack EC2 interface [`ec2stack`](https://github.com/BroganD1993/ec2stack)
 
-I wrote this book on my copious spare time while my wife was sleeping. If you would like to see more, reach out to me on Twitter: @sebgoa
+If you would like to see more, reach out to me on Twitter: @sebgoa
 
-And don't hestitate to donate :)
+And don't hesitate to donate :)
 
 Bitcoin address: 1DkeZs5HJTcsRyjZviZ9NjiecfqZsDqnA2
 
