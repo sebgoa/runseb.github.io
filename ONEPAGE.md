@@ -459,7 +459,7 @@ To get you started quickly, save the following script in a .py file.
         return [i for i in conn.list_sizes() if i.id == id][0]
 
     script=ScriptDeployment("/bin/date")
-    image=getimage('8c7e60ae-3a30-4031-a3e6-29832d85d7cb')
+    image=getimage('82a393f3-8db1-450d-a901-3af2a5dd5523')
     size=getsize('71004023-bb72-4a97-b1e9-bc66dfce9470')
     msd = MultiStepDeployment([script])
 
