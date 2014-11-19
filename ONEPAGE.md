@@ -6,7 +6,7 @@ A book of exercises to learn CloudStack using [exoscale](http://exoscale.ch)
 ![Apache CloudStack logo](./images/acslogo.png)
 
 These instructions aim to give an introduction to Apache CloudStack. You will be accessing a production cloud based on CloudStack, getting a feel for it through the UI, then using a few tools to provision and configure machines in the cloud. For a more complete guide see this [Little Book](https://github.com/runseb/cloudstack-books/blob/master/en/clients.markdown)
- 
+
 What we will do in this tutorial is:
 
 0. Getting your feet wet with [exoscale](http://exoscale.ch)
@@ -43,9 +43,9 @@ Go to [exoscale](http://exoscale.ch) and signup
 
 If you can talk to me :) ask me for a voucher which contains a coupon code.
 
-Discover the UI and start an instance 
+Discover the UI and start an instance
 -------------------------------------
- 
+
 Browse the UI, identify the `security groups` and `keypairs` sections.
 
 ![Sec Group and Key Pair](./images/secgkeys.png)
@@ -68,7 +68,7 @@ ssh to the instance using the keys that you created earlier:
 
     ssh -i /path/to/key root@<IP of instance>
 
-Find your API Keys 
+Find your API Keys
 ------------------
 
 The exoscale UI is great and so is the default CloudStack UI, however the `cloud` is really about API access.
@@ -100,12 +100,12 @@ Start an Ubuntu 12.04 instance and in the User-Data tab input:
     apt-get --yes --quiet install git puppet-common
 
     #
-    # Fetch puppet configuration from public git repository. 
+    # Fetch puppet configuration from public git repository.
     #
 
     mv /etc/puppet /etc/puppet.orig
     git clone https://github.com/retrack/exoscale-wordpress.git /etc/puppet
- 
+
     #
     # Run puppet.
     #
@@ -168,7 +168,7 @@ Head back to the UI, start a coreOS instance and paste the following in the User
             After=docker.service
             Requires=docker.service
             Description=starts Elastic Search container
-        
+
             [Service]
             TimeoutStartSec=0
             ExecStartPre=/usr/bin/docker pull dockerfile/elasticsearch
@@ -182,7 +182,7 @@ Once the instance has started, you can ssh into it like we did previously. It wi
 
     $ watch docker images
 
-Once it's downloaded the container will start and you will be able to open your browser on http://<ip of instance>:9200 
+Once it's downloaded the container will start and you will be able to open your browser on http://<ip of instance>:9200
 
 Well done, you are running a one node elasticsearch "cluster" via docker on coreOS on cloudstack.
 
@@ -201,7 +201,7 @@ Installation
 ------------
 
 `CloudMonkey` is available from the Cheese Shop :), installing it is as easy as:
- 
+
     $pip install cloudmonkey
 
 Of course you will need `pip`, in case you have not installed it already, get it on Ubuntu with:
@@ -342,7 +342,7 @@ The instance would be stopped with:
     +--------------------------------------+--------------------------------------+---------+
     | 5566c27c-e31c-438e-9d97-c5d5904453dc | 5566c27c-e31c-438e-9d97-c5d5904453dc | Stopped |
     +--------------------------------------+--------------------------------------+---------+
-        
+
 The *ids* that you will use will differ from this example. Make sure you use the ones that corresponds to your CloudStack cloud.
 
 With CloudMonkey all CloudStack APIs are available.
@@ -474,7 +474,7 @@ Start this shell by executing the script:
     $ ./libshell.py
     [<NodeLocation: id=1128bd56-b4d9-4ac6-a7b9-c715b187ce11, name=CH-GV2, country=Unknown, driver=Exoscale>]
     Hello from Libcloud Shell !!
-    In [1]: 
+    In [1]:
 
 At the prompt type `conn.list` and press the tab key to see the list of available `list` apis.
 
@@ -515,7 +515,7 @@ Open your browser and go to `http://<ip of instance started>` if all went well, 
 Vagrant
 =======
 
-[Vagrant](http://vagrantup.com) is a tool to create *lightweight, portable and reproducible development environments*. Specifically it allows you to use configuration management tools to configure a virtual machine locally (via virtualbox) and then deploy it *in the cloud* via Vagrant providers. 
+[Vagrant](http://vagrantup.com) is a tool to create *lightweight, portable and reproducible development environments*. Specifically it allows you to use configuration management tools to configure a virtual machine locally (via virtualbox) and then deploy it *in the cloud* via Vagrant providers.
 
 In this next exercise we are going to install vagrant on our local machine and use Exoscale vagrant boxes to provision VM in the Cloud using configuration setup in Vagrant. For future reading check this [post](http://sebgoa.blogspot.co.uk/2013/12/veewee-vagrant-and-cloudstack.html)
 
@@ -554,6 +554,7 @@ Then edit the `Vagrantfile` created to contain this:
         config.vm.box = "Linux-Ubuntu-13.10-64-bit-50-GB-Disk"
         config.ssh.username = "root"
         config.ssh.private_key_path = "/Users/vagrant/.ssh/id_rsa.vagrant"
+	config.ssh.pty = true
 
         config.vm.provider :cloudstack do |cloudstack, override|
             cloudstack.api_key = "AAAAAAAAAAAAAAAA-aaaaaaaaaaa"
@@ -647,11 +648,11 @@ Our last exercise for this tutorial will be an introduction to [Ansible](http://
 
 ![Ansible](./images/ansible.png)
 
-Installation 
+Installation
 ------------
 
 First install *ansible*:
-    
+
     pip install ansible
 
 Or get it via packages `yum install ansible`, `apt-get install ansible` if you have set the proper repositories.
@@ -673,12 +674,12 @@ Then run your first ansible command: `ping`:
 You should see the following output:
 
     185.1.2.3 | success >> {
-        "changed": false, 
+        "changed": false,
         "ping": "pong"
     }
 
     185.3.4.5 | success >> {
-        "changed": false, 
+        "changed": false,
         "ping": "pong"
     }
 
@@ -729,7 +730,7 @@ EC2stack
 ========
 
 CloudStack has two Amazon WebServices EC2 interface, one built-in and one that was just released recently [ec2stack](https://github.com/BroganD1993/ec2stack).
-These interfaces allow you to use any EC2 client to communicate with a CloudStack based cloud, they received EC2 api calls and forward them to 
+These interfaces allow you to use any EC2 client to communicate with a CloudStack based cloud, they received EC2 api calls and forward them to
 a CloudStack cloud, mapping the EC2 calls to the appropriate CloudStack API.
 
 In this section we are going to deploy `ec2stack` and test it using the [AWS CLI](http://aws.amazon.com/cli/)
@@ -774,13 +775,13 @@ configure ec2stack
 `ec2stack` can be configured with `ec2stack-configure` command. To set it up with [exoscale](http://exoscale.ch) do:
 
     $ec2stack-configure
-    EC2Stack bind address [0.0.0.0]: 
-    EC2Stack bind port [5000]: 
+    EC2Stack bind address [0.0.0.0]:
+    EC2Stack bind port [5000]:
     Cloudstack host [localhost]: api.exoscale.ch
     Cloudstack port [8080]: 443
     Cloudstack protocol [http]: https
     Cloudstack path [/client/api]: /compute
-    Cloudstack custom disk offering name [Custom]: 
+    Cloudstack custom disk offering name [Custom]:
     Cloudstack default zone name: CH-GV2
     Do you wish to input instance type mappings? (Yes/No): Yes
     Insert the AWS EC2 instance type you wish to map: m1.small
