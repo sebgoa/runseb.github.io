@@ -46,7 +46,7 @@ If you can talk to me :) ask me for a voucher which contains a coupon code.
 Discover the UI and start an instance
 -------------------------------------
 
-Browse the UI, identify the `security groups` and `keypairs` sections.
+Browse the UI, identify the `FIREWALLING` and `SSH KEYS` sections.
 
 ![Sec Group and Key Pair](./images/secgkeys.png)
 
