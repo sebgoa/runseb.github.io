@@ -16,4 +16,4 @@ Edit the `config.py` script to specify your API keys, then run:
 
 If you are familiar with Vagrant this will be straightforward, if not, you need to add a box to your local installation for instance:
 
-    vagrant box add Linux-Ubuntu-13.10-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-13.10-64-bit-50-GB-Disk.box
+    vagrant box add Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk.box

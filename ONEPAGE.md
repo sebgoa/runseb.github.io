@@ -539,19 +539,19 @@ Edit the `config.py` script to specify your API keys, then run:
 
 If you are familiar with Vagrant this will be straightforward, if not, you need to add a box to your local installation for instance:
 
-    vagrant box add Linux-Ubuntu-13.10-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-13.10-64-bit-50-GB-Disk.box
+    vagrant box add Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk.box
 
 Initialize a `Vagrantfile` and start an instance
 ----------------------------------------------
 
 Now you need to create a *Vagrantfile*. In the directory of you choice  for example `/tutorial` do:
 
-    vagrant init Linux-Ubuntu-13.10-64-bit-50-GB-Disk
+    vagrant init Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk
 
 Then edit the `Vagrantfile` created to contain this:
 
     Vagrant.configure("2") do |config|
-        config.vm.box = "Linux-Ubuntu-13.10-64-bit-50-GB-Disk"
+        config.vm.box = "Linux-Ubuntu-14.04-64-bit-50-GB-Disk"
         config.ssh.username = "root"
         config.ssh.private_key_path = "/Users/vagrant/.ssh/id_rsa.vagrant"
 	config.ssh.pty = true
