@@ -93,6 +93,8 @@ In addition you need to register your exoscale API keys with the `aws` CLI:
     Default region name [None]: CH-GV2
     Default output format [None]:
 
+    $aws configure set default.ec2.signature_version v2
+
 You can see these settings in the `~/.aws/config` mentioned earlier.
 Check the AWS CLI [reference](http://docs.aws.amazon.com/cli/latest/reference/) for further customization.
 The output format can be `json`, `text` or `table`.
