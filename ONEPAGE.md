@@ -386,11 +386,11 @@ driver.
 
 Then, using your keys and endpoint, create a connection object. Note
 that this is a local test and thus not secured. If you use a CloudStack
-public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='http://api.exoscale.ch` and `path=/compute` like so:
+public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='api.exoscale.ch` and `path=/compute` like so:
 
     >>> apikey='plgWJfZK4gyS3mlZLYq_u38zCm0bewzGUdP66mg'
     >>> secretkey='VDaACYb0LV9eNjeq1EhwJaw7FF3akA3KBQ'
-    >>> host='https://api.exoscale.ch'
+    >>> host='api.exoscale.ch'
     >>> path='/compute'
     >>> conn=Driver(key=apikey,secret=secretkey,secure=True,host=host,port='443',path=path)
 
