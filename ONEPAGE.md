@@ -46,7 +46,7 @@ If you can talk to me :) ask me for a voucher which contains a coupon code.
 Discover the UI and start an instance
 -------------------------------------
 
-Browse the UI, identify the `security groups` and `keypairs` sections.
+Browse the UI, identify the `FIREWALLING` and `SSH KEYS` sections.
 
 ![Sec Group and Key Pair](./images/secgkeys.png)
 
@@ -386,11 +386,11 @@ driver.
 
 Then, using your keys and endpoint, create a connection object. Note
 that this is a local test and thus not secured. If you use a CloudStack
-public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='http://api.exoscale.ch` and `path=/compute` like so:
+public cloud, make sure to use SSL properly (i.e `secure=True`). Replace the host and path with the ones of your public cloud. For exoscale use `host='api.exoscale.ch` and `path=/compute` like so:
 
     >>> apikey='plgWJfZK4gyS3mlZLYq_u38zCm0bewzGUdP66mg'
     >>> secretkey='VDaACYb0LV9eNjeq1EhwJaw7FF3akA3KBQ'
-    >>> host='https://api.exoscale.ch'
+    >>> host='api.exoscale.ch'
     >>> path='/compute'
     >>> conn=Driver(key=apikey,secret=secretkey,secure=True,host=host,port='443',path=path)
 
@@ -539,19 +539,19 @@ Edit the `config.py` script to specify your API keys, then run:
 
 If you are familiar with Vagrant this will be straightforward, if not, you need to add a box to your local installation for instance:
 
-    vagrant box add Linux-Ubuntu-13.10-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-13.10-64-bit-50-GB-Disk.box
+    vagrant box add Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk /path/or/url/to/boxes/Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk.box
 
 Initialize a `Vagrantfile` and start an instance
 ----------------------------------------------
 
 Now you need to create a *Vagrantfile*. In the directory of you choice  for example `/tutorial` do:
 
-    vagrant init Linux-Ubuntu-13.10-64-bit-50-GB-Disk
+    vagrant init Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk
 
 Then edit the `Vagrantfile` created to contain this:
 
     Vagrant.configure("2") do |config|
-        config.vm.box = "Linux-Ubuntu-13.10-64-bit-50-GB-Disk"
+        config.vm.box = "Linux-Ubuntu-14.04-64-bit-50-GB-Disk"
         config.ssh.username = "root"
         config.ssh.private_key_path = "/Users/vagrant/.ssh/id_rsa.vagrant"
 	config.ssh.pty = true
@@ -822,6 +822,8 @@ In addition you need to register your exoscale API keys with the `aws` CLI:
     AWS Secret Access Key [None]: aHuDB2ewpgxVuQlvD9P1o313BioI1W4vFCxQpTCqGvbqj3Y6mVZo-paBbYyE3W_TQKEirnTKENNRC5NR5cUjEg
     Default region name [None]: CH-GV2
     Default output format [None]:
+
+    $aws configure set default.ec2.signature_version v2
 
 You can see these settings in the `~/.aws/config` mentioned earlier.
 Check the AWS CLI [reference](http://docs.aws.amazon.com/cli/latest/reference/) for further customization.

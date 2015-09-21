@@ -8,7 +8,7 @@ Now you need to create a *Vagrantfile*. In the directory of you choice  for exam
 Then edit the `Vagrantfile` created to contain this:
 
     Vagrant.configure("2") do |config|
-        config.vm.box = "Linux-Ubuntu-13.10-64-bit-50-GB-Disk"
+        config.vm.box = "Linux-Ubuntu-14.04-LTS-64-bit-50-GB-Disk"
         config.ssh.username = "root"
         config.ssh.private_key_path = "/Users/vagrant/.ssh/id_rsa.vagrant"
 
